@@ -2,14 +2,19 @@
 <body>  
   {% include header.html %}
   {% include hero.html %}
-  <div class="mt-5">
-    {% include contactsection.html %}
-
-  </div>
 
 <main id="main" role="main"> 
-  {{ content }}
-</main>  
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {{ content }}
+
+      </div>
+    </div>
+  </div>
+</main> 
+
+{% include contactsection.html %}
 {% include footer.html %}
 {% include script.html %}
 </body>
