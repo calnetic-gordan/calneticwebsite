@@ -11,7 +11,7 @@
         {% for item in site.data.menu.main %}
           {% if item.child %}
             <li class="dropdown">
-                <a href="{{ item.url }}"><span>{{ item.name }}</span> <i class="bi bi-chevron-down"></i></a>
+                <a href="{% if page.layout != 'default'  %}/{% endif %}{{ item.url }}"><span>{{ item.name }}</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     {% for childitem in item.child  %}
                             <li><a href="{{ childitem.url }}">{{ childitem.name }}</a></li>
@@ -20,7 +20,7 @@
             </li>                
             {% else %}
               <li class="nav-item">
-                <a class="nav-link scrollto {% if item.url == page.url %} active {% endif %}" href="{{ item.url }}" aria-current="page">{{ item.name }}</a>
+                <a class="nav-link scrollto {% if item.url == page.url %} active {% endif %}" href="{% if page.layout != 'default'  %}/{% endif %}{{ item.url }}" aria-current="page">{{ item.name }}</a>
               </li>  
           {% endif %}
       {% endfor %}  
