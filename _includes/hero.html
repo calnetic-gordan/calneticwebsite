@@ -1,5 +1,6 @@
 <!-- ======= Banner Section ======= -->
-  <section id="hero" class="d-flex align-items-center" style="background-image: url({{ page.hero.image }});">
+  <section id="hero" class="d-flex align-items-center {% if page.layout != 'default'  %} innerhero {% endif %}" 
+  {% if page.layout == "default"}  %} style="background-image: url({{ page.hero.image }});" {% endif %}>
   		<div class="container herotxt">
 			<div class="row">
 				<div class="col-xl-9">
